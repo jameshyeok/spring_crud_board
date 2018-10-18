@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board.extend.sql.board">
+
+    <insert id="registerBoard">
+      INSERT INTO tbl_board (title, content, writer) VALUES (#{title}, #{content}, #{writer})
+    </insert>
+
+    <select id="getBoardList" resultType="java.util.HashMap">
+      SELECT
+        *
+      FROM tbl_board
+      ORDER BY bno DESC
+    </select>
+
+    <select id="selectOneBoard" resultType="java.util.HashMap">
+        SELECT
+        *
+        FROM tbl_board
+        WHERE bno = #{bno}
+    </select>
+
+    <update id="updateBoard" parameterType="board.extend.vo.BoardVO">
+        UPDATE tbl_board SET title = #{title} WHERE bno = #{bno}
+    </update>
+
+    <delete id="deleteBoard">
+        DELETE FROM tbl_board WHERE bno = #{bno}
+    </delete>
+
+</mapper>

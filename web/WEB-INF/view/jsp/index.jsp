@@ -11,6 +11,15 @@
     <title>Title</title>
 </head>
 <body>
-hello spring!!
+    <form action="/boards/register" method="post">
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="content" placeholder="content">
+        <input type="text" name="writer" placeholder="writer">
+        <input type="submit" value="submit">
+    </form>
+
+<script>
+    console.log('${result}');
+</script>
 </body>
 </html>
