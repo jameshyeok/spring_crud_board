@@ -1,5 +1,6 @@
 package board.extend.dao;
 
+import board.extend.util.PageNavi;
 import board.extend.vo.BoardVO;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -38,7 +39,7 @@ public class BoardDAO {
     }
 
     // board all list
-    public List<HashMap<String, Object>> getBoardList() {
-        return sqlSession.selectList(namespace + ".getBoardList");
+    public List<HashMap<String, Object>> getBoardList(PageNavi pageNavi) {
+        return sqlSession.selectList(namespace + ".getBoardList", pageNavi);
     }
 }

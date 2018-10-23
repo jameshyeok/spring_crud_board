@@ -10,11 +10,12 @@
       INSERT INTO tbl_board (title, content, writer) VALUES (#{title}, #{content}, #{writer})
     </insert>
 
-    <select id="getBoardList" resultType="java.util.HashMap">
+    <select id="getBoardList" parameterType="board.extend.util.PageNavi" resultType="java.util.HashMap">
       SELECT
         *
       FROM tbl_board
       ORDER BY bno DESC
+      limit #{pageStart}, #{perPageNum}
     </select>
 
     <select id="selectOneBoard" resultType="java.util.HashMap">

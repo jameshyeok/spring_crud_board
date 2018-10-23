@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: jun
   Date: 2018. 10. 18.
-  Time: PM 11:22
+  Time: PM 11:54
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -14,29 +14,26 @@
 </head>
 <body>
 <table>
-    <thead>
+    <tr>
         <th>bno</th>
-        <th>title</th>
+        <td>${board.bno}</td>
+    </tr>
+    <tr>
+        <th>Writer</th>
+        <td>${board.writer}</td>
+    </tr>
+    <tr>
+        <th>Register date</th>
+        <td>${board.reg_dt}</td>
+    </tr>
+    <tr>
+        <th>Title</th>
+        <td>${board.title}</td>
+    </tr>
+    <tr>
         <th>content</th>
-        <th>writer</th>
-        <th>register date</th>
-        <th>view count</th>
-    </thead>
-    <tbody>
-        <c:forEach var="board" items="${boardList}">
-            <tr>
-                <td>${board.bno}</td>
-                <td>${board.title}</td>
-                <td>${board.content}</td>
-                <td>${board.writer}</td>
-                <td>${board.reg_dt}</td>
-                <td>${board.view_cnt}</td>
-            </tr>
-        </c:forEach>
-    </tbody>
+        <td>${board.content}</td>
+    </tr>
 </table>
-<script>
-    console.log('${result}');
-</script>
 </body>
 </html>
